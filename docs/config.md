@@ -175,7 +175,6 @@ The config for an instance of the summary.
 | 2 | OneReaderRubricTextView | Style | TextSize 12sp bold | The style of rubric views. |
 | 3 | or_holder_color | Color | light: #F9F9F9 / dark: #536067 | The background color of image views when loading. |
 | 3 | isFaceCropEnabled | Boolean | false | Enable on-device smart crop for images. |
-
 | 4 | or_summary_article_title_tint_light | Color |  #1E323D  | The light color of the title in article cells. |
 | 4 | or_summary_article_title_tint_dark | Color |  #FFFFFF | The dark color of the title in article cells. |
 | 4 | OneReaderSummaryArticleTitleTextView | Style | TextSize 16sp bold | The style of the title in article cells. |
