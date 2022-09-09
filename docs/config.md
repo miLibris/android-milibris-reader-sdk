@@ -135,6 +135,8 @@ The config for the mini summary bottom sheet of the reader.
 ![mini_summary_1.png](./assets/mini_summary_1.png)
 ![mini_summary_2.png](./assets/mini_summary_2.png)
 
+| Badge | Name | Type | Default value | Description |
+| ----- | ---- | ---- | ------------- | ----------- |
 | 1 | or_mini_summary_loading_tint | Color | light: #BEC2C5 / dark: #536067 | The color of the label placeholders in the mini-summary while loading. |
 | 2 | OneReaderFlatPlanArticleTitleTextView | Style | light: #15202B / dark: #FFFFFF | The color of the cell title in the mini-summary. |
 | 3 | isFaceCropEnabled | Boolean | false | Enable on-device smart crop for images. |
