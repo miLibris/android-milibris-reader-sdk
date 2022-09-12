@@ -12,6 +12,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
   * [Event tracking](#event-tracking)
   * [Resume reading](#resume-reading-at-the-last-read-page)
   * [Sharing](#provide-article-sharing-functionality)
+  * [Branding](#apply-your-branding-to-the-reader-ui)
 
 
 ### Prerequisites
@@ -159,6 +160,11 @@ override fun onShareClicked(article: IArticle) {
 }
 ```
 
+
+### Apply your branding to the reader UI
+
+Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources.
+The complete reference can be found in [docs/config.md](./Docs/config.md#readerconfig).
 
 ### Sample project
 
