@@ -184,7 +184,7 @@ class ORListener(
 
 ### Apply your branding to the reader UI
 
-Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources. The complete reference can be found in [docs/config.md](./Docs/config.md#readerconfig).
+Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources. The complete reference can be found in [docs/config.md](./docs/config.md#readerconfig).
 
 ### Sample project
 
