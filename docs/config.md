@@ -6,6 +6,7 @@
 * [NavigationBarConfig](#navigationbarconfig)
 * [ReaderConfig](#readerconfig)
 * [MiniSummaryConfig](#minisummaryconfig)
+* [ReaderTutorialConfig](#readertutorialconfig)
 * [SlideshowBoxConfig](#slideshowboxconfig)
 * [SummaryConfig](#summaryconfig)
 
@@ -48,7 +49,6 @@ The config for an instance of the article reader.
 | 6 | ic_or_listen | Drawable | icon | The icon of text to speech function color of the bottom bar. |
 | 6 | ic_or_mute | Drawable | icon | The icon of text to speech mute function color of the bottom bar. |
 | 7 | ic_or_share | Drawable | icon | The icon of share function color of the bottom bar. |
-
 
 ## ArticleSettingsConfig
 
@@ -130,6 +130,7 @@ The config for an instance of the reader.
 | 8 | or_flat_plan_text_color | Color | light: #536067 / dark: #FFFFFF | The color of the text in the flatplan when not selected. |
 
 ## MiniSummaryConfig
+
 The config for the mini summary bottom sheet of the reader.
 
 ![mini_summary_1.png](./assets/mini_summary_1.png)
@@ -143,6 +144,32 @@ The config for the mini summary bottom sheet of the reader.
 | 3 | or_flat_plan_background_color | Color | light: #F9F9F9 35% / dark: #1F1F1F 35% | The background color of the bottom sheet. |
 | 4 | or_mini_summary_separator_light | Color | #ECECEC | The light separator color in the mini-summary. |
 | 4 | or_mini_summary_separator_dark | Color | #333333 | The dark separator color in the mini-summary. |
+
+## ReaderTutorialConfig
+
+The config for the tutorial of the reader.
+
+![readerTutotial_1.png](./assets/readerTutorial_1.png)
+
+| Badge | Name                        | Type     | Default value                               | Description                                                                          |
+|-------|-----------------------------|----------|---------------------------------------------|--------------------------------------------------------------------------------------|
+| 1     | ORTutorialCloseButton       | Style    | src,tint,background drawable,backgroundTint | The style of close button with image definition tint background and background tint. |
+| 2     | or_tutorial_bg              | Color    | #000000                                     | The background color of an item image.                                               |
+| 3     | or_tutorial_welcome         | Drawable | or_tutorial_welcome                         | The image for the welcome item.                                                      |
+| 3     | or_tutorial_navigate        | Drawable | or_tutorial_navigate                        | The image for the reader item.                                                       |
+| 3     | or_tutorial_articles        | Drawable | or_tutorial_articles                        | The image for the articles item.                                                     |
+| 3     | or_tutorial_summary         | Drawable | or_tutorial_summary                         | The image for the summary item.                                                      |
+| 3     | or_tutorial_listen          | Drawable | or_tutorial_listen                          | The image for the articleReader item.                                                |
+| 3     | or_tutorial_share           | Drawable | or_tutorial_share                           | The image for the share item.                                                        |
+| 4     | ORTutorialArticlesIndicator | Style    | background,backgroundTint,textColor         | The style of the article capsule.                                                    |
+| 5     | OrTutorialSubTitleSurTitle  | Style    | textSize,TextColor, font                    | The text style of an item surtitle/subtitle.                                         |
+| 5     | OrTutorialTitle             | Style    | textSize,TextColor, font                    | The text style of an item Title.                                                     |
+| 6     | OrTutorialDescription       | Style    | textSize,TextColor, font                    | The text style of an item description.                                               |
+| 7     | or_current_page_indicator   | Color    | #000000                                     | The color of the selected page indicator.                                            |
+| 7     | or_page_indicator           | Color    | #BEC2C5                                     | The color of the page indicator.                                                     |
+| 8     | OrTutorialSkipButton        | Style    | textColor,TextSize,textStyle                | The style of skip button.                                                            |
+| 9     | ORTutorialCard              | Style    | background,cardCornerRadius                 | The style of the card holding the content.                                           |
+| 10    | or_tutorial_bg              | Color    | #B3000000                                   | The color of the overlay background.                                                 |
 
 ## SlideshowBoxConfig
 
