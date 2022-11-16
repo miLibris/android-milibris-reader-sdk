@@ -138,18 +138,6 @@ Or this way if you don't want the tutorial to be shown on previews for example
 }
 ```
 
-For testing purposes or if you have a feature that resets tutorials in your app, you can add:
-
-```swift
-import MiLibrisReaderSDK
-
-func resetTutorials() {
-    MiLibrisReaderTutorialProvider().resetTutorial()
-}
-
-}
-```
-
 ### Event tracking
 
 If you want to track user events on reader you need to implement create your own class that implements The ReaderLister :
@@ -229,4 +217,4 @@ Many components of the reader UI can be customized to match your brand, And for 
 
 A sample project is provided to help you implement the reader integration. It contains an example to unpack a complete archive and to open if with PdfReader class.
 
-If your Milibris content has articles, you can implement your own sharing solution by adding your own code in onShareClicked() just like shown in this sample in the class ORListener
+If your miLibris content has articles, you can implement your own sharing solution by adding your own code in onShareClicked() just like shown in this sample in the class ORListener
