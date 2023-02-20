@@ -9,6 +9,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
     * [Open reader](#read-unpacked-contents)
     * [Customization](#customization)
     * [Optional features](#optional-features)
+    * [Configure the reader tutorial](#configure-the-reader-tutorial)
     * [Event tracking](#event-tracking)
     * [Resume reading](#resume-reading-at-the-last-read-page)
     * [Sharing](#provide-article-sharing-functionality)
@@ -114,6 +115,29 @@ We are providing a ReaderSettings class where you can customize the reader as yo
 }  
 ```  
 
+### Configure the reader tutorial
+
+The reader is configured to display a tutorial the first time that it is opened on a new device. You can disable it you want:
+
+```kotlin
+ val readerSettings = ReaderSettings().apply {
+    showReaderTutorials = false
+} 
+```
+
+Or this way if you don't want the tutorial to be shown on previews for example
+
+```kotlin
+ class ORListener(
+    private val dataSource: XmlPdfReaderDataSource
+) : ReaderListener {
+
+    override fun canOpenTutorials(): Boolean {
+        return dataSource.materialParser.isPreview.not()
+    }
+}
+```
+
 ### Event tracking
 
 If you want to track user events on reader you need to implement create your own class that implements The ReaderLister :
@@ -124,7 +148,8 @@ If you want to track user events on reader you need to implement create your own
     override fun onIssueRead() {}
     override fun onIssuePageRead(pageNumber: Int, isCalledFromArticles: Boolean) {}
     override fun onSummaryOpened(isOpenedFromArticles: Boolean) {}
-    ....  
+    // ....  
+}
 ```  
 
 ### Resume reading at the last read page
@@ -146,6 +171,7 @@ private fun openReader() {
             productRepo,
             ORListener()
         )
+    )
 }
 
 class ORListener : ReaderListener {
@@ -169,7 +195,7 @@ val readerSetting = ReaderSettings().apply {
 }
 
 class ORListener(
-    val dataSource: XmlPdfReaderDataSource,
+    private val dataSource: XmlPdfReaderDataSource,
     private val context: Context
 ) : ReaderListener {
     override fun onShareClicked(article: IArticle) {
@@ -180,11 +206,12 @@ class ORListener(
             .setText(articleUrl)
         intentBuilder.startChooser()
     }
+}
 ```
 
 ### Apply your branding to the reader UI
 
-Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources. The complete reference can be found in [docs/config.md](./Docs/config.md#readerconfig).
+Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources. The complete reference can be found in [docs/config.md](./docs/config.md#readerconfig).
 
 ### Sample project
 
