@@ -35,7 +35,7 @@ android {
     }
     namespace 'com.milibris.reader.sdk.sample'
 }
-ext.readerVersion = "0.23.0"
+ext.readerVersion = "0.23.1"
 
 dependencies {
 
