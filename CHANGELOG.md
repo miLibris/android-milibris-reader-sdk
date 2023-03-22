@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 0.23.0
+
+## Improvements
+- Migrate package name from co.cafeyn to com.milibris  (#231)
+
 # 0.22.0
 
 ## Improvements

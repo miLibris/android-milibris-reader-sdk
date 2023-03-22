@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.updateLayoutParams
-import co.cafeyn.onereader.data.session.ReaderSettings
-import co.cafeyn.onereader.feature.OneReaderActivity
+import com.milibris.onereader.data.session.ReaderSettings
+import com.milibris.onereader.feature.OneReaderActivity
 import com.milibris.reader.XmlPdfReaderDataSource
 import java.io.File
 import java.io.FileOutputStream
