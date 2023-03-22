@@ -10,8 +10,8 @@ import co.cafeyn.onereader.data.article.TextToPlayState
 import co.cafeyn.onereader.data.product.Box
 import co.cafeyn.onereader.data.session.ReaderListener
 import co.cafeyn.onereader.feature.OneReaderActivity
+import co.cafeyn.onereader.repository.BaseListener
 import com.milibris.reader.XmlPdfReaderDataSource
-import i0.b
 import org.apache.commons.io.FileUtils
 import java.io.File
 import java.nio.charset.Charset
@@ -82,7 +82,7 @@ class ORListener(
         Log.e(TAG, "onArticleChange :: article title  ${article.title}")
     }
 
-    override fun onArticleBookMarkClicked(p0: IArticle, p1: Boolean, p2: b<Boolean>) {
+    override fun onArticleBookMarkClicked(article: IArticle, isFromArticleView: Boolean, bookmarkListener: BaseListener<Boolean>) {
     }
 
     override fun onMiniSummaryOpened() {
@@ -97,7 +97,7 @@ class ORListener(
         Log.e("ORListener", "onEnrichmentClicked")
     }
 
-    override fun shouldOpenArticle(p0: OneReaderActivity, p1: IArticle): Boolean {
+    override fun shouldOpenArticle(oneReaderActivity: OneReaderActivity, article: IArticle): Boolean {
         Log.e("ORListener", "shouldOpenArticle")
         return true
     }

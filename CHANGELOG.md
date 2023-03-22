@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 0.22.0
+
+## Improvements
+- Refactor PDF reader to improve memory management and fix all OutOfMemoryException  (#230)
+
 # 0.21.1
 
 ## Features

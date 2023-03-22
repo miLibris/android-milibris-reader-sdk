@@ -32,10 +32,10 @@ repositories {
 }
 
 dependencies {
-    api("co.cafeyn:one-reader:0.20.0") {   //If you ever have conflict with the version used in our libary add this line  
+    api("co.cafeyn:one-reader:0.22.0") {   //If you ever have conflict with the version used in our libary add this line  
         exclude group: "androidx.lifecycle"
     }
-    api("com.milibris:milibris-reader:0.18.1")
+    api("com.milibris:milibris-reader:0.22.0")
 }  
 ```  
 
