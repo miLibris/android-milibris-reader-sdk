@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 0.23.1
+
+## Improvements
+- Add style for Logo that can be overrided easily to change width height background (#234)
+- fix padding on logo capsule (#234)
+
 # 0.23.0
 
 ## Improvements
