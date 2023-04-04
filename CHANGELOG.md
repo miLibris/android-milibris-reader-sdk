@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 0.23.2
+
+## FIXED
+- Dark and light Mode on WebView  (#235)
+
 # 0.23.1
 
 ## Improvements
