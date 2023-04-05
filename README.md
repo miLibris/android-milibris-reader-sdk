@@ -140,7 +140,7 @@ Or this way if you don't want the tutorial to be shown on previews for example
 
 ### Event tracking
 
-If you want to track user events on reader you need to implement create your own class that implements The ReaderLister :
+If you want to track user events on reader you need to implement create your own class that implements The ReaderListener :
 
 ```kotlin
   class ORListener : ReaderListener {
