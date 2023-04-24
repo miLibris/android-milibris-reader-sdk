@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 0.24.0
+
+## FIXED
+- Fix Memory Leak  (#236)
+
 # 0.23.2
 
 ## FIXED
