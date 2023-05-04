@@ -1,5 +1,17 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.0.1
+
+## FIXED
+- Fix loop on TTS button  (#241)
+
+# 1.0.0
+
+## Features
+- First version with native articles (#237)
+- Articles with different template (#237)
+- New block containing next article (#237)
+
 # 0.24.0
 
 ## FIXED
