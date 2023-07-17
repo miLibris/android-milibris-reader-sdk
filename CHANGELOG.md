@@ -1,5 +1,19 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.0.3
+
+13/07/2023
+
+## Improvements
+
+- Page rendering performances improvements
+
+# 1.0.2
+
+## Improvements
+
+- Native article dark/light mode improvements
+
 # 1.0.1
 
 ## FIXED
