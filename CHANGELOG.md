@@ -1,5 +1,13 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.0.4
+
+07/08/2023
+
+## Improvements
+
+- Fix page rendering cache cleanup
+
 # 1.0.3
 
 13/07/2023
