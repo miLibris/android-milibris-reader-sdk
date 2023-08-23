@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.1.0
+
+## Features
+- Add a light/dark options for logo
+
 # 1.0.4
 
 07/08/2023
