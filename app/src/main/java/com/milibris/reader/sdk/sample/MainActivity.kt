@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         shareEnabled = true
         enableSummaryImages = true
         logo = R.drawable.milibris
+        logoLight = R.drawable.milibris_light
+        logoDark = R.drawable.milibris_dark
     }
     private lateinit var coverImageURL: String
     override fun onCreate(savedInstanceState: Bundle?) {

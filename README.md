@@ -2,20 +2,25 @@
 
 MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReaderSDK). It includes the MLFoundation library which allows unpacking miLibris contents.
 
-* [Prerequisites](#prerequisites)
-    * [Setup](#setup)
-    * [Implementation](#implementation)
-    * [Unpack archive](#unpack-a-complete-archive-with-mlfoundation)
-    * [Open reader](#read-unpacked-contents)
-    * [Customization](#customization)
-    * [Optional features](#optional-features)
-    * [Configure the reader tutorial](#configure-the-reader-tutorial)
-    * [Event tracking](#event-tracking)
-    * [Resume reading](#resume-reading-at-the-last-read-page)
-    * [Sharing](#provide-article-sharing-functionality)
-    * [Branding](#apply-your-branding-to-the-reader-ui)
+- [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+- [Implementation](#implementation)
+    - [Unpack a complete archive with MLFoundation](#unpack-a-complete-archive-with-mlfoundation)
+    - [Read unpacked contents](#read-unpacked-contents)
+- [Customization](#customization)
+    - [Optional Features](#optional-features)
+    - [Configure the reader tutorial](#configure-the-reader-tutorial)
+    - [Event tracking](#event-tracking)
+    - [Resume reading at the last read page](#resume-reading-at-the-last-read-page)
+    - [Provide article sharing functionality](#provide-article-sharing-functionality)
+    - [Customize logo](#customize-logo)
+        - [`DisplayMode` variants in article reader](#displaymode-variants-in-article-reader)
+        - [Override capsule](#override-capsule)
+            - [Remove the capsule](#remove-the-capsule)
+    - [Apply your branding to the reader UI](#apply-your-branding-to-the-reader-ui)
+- [Sample project](#sample-project)
 
-### Prerequisites
+## Prerequisites
 
 MiLibrisReaderSDK developed in Kotlin requires Android 5 or higher, and uses glide to load images as external library and other androidX libraries like ViewModel and appCompact.  
 Every app using the SDK must be configured with a licence key provided by miLibris. A licence key cannot be used in more than one application.
@@ -48,7 +53,7 @@ In order for the SDK to work properly you need to add the licence key provided i
 </application>  
 ```  
 
-# Implementation
+## Implementation
 
 In order to read a content, your application will likely implement the following steps:
 
@@ -97,7 +102,7 @@ startActivity(
 )  
 ```  
 
-# Customization
+## Customization
 
 ### Optional Features
 
@@ -209,11 +214,84 @@ class ORListener(
 }
 ```
 
+### Customize logo
+
+#### `DisplayMode` variants in article reader
+
+While reading articles, user can change the `DisplayMode` to `AUTO`, `LIGHT`, or `DARK`.
+
+To match this configuration, we can set a logo for each of these options.
+```kotlin
+val readerSetting = ReaderSettings().apply {
+    logo = R.drawable.milibris                 // AUTO
+    logoLight = R.drawable.milibris_light      // LIGHT
+    logoDark = R.drawable.milibris_dark        // DARK
+}
+```
+_If `logoLight` and `logoDark` are not provided, `logo` will be used._
+
+The `AUTO` mode relies on Android built-in configuration based drawable:
+```
+├── res
+│   ├── drawable
+│   │   ├── milibris.xml          // Used in AUTO when OS is in light mode
+│   │   ├── milibris_light.png
+│   │   ├── milibris_dark.png
+│   ├── drawable-night
+│   │   ├── milibris.xml          // Used in AUTO when OS is in dark mode
+
+```
+
+#### Override capsule
+
+Logo appearance is defined by the `ORLogo` style:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ORLogo">
+        <item name="android:layout_width">@dimen/or_logo_capsule_width</item>       <!-- 100dp -->
+        <item name="android:layout_height">@dimen/or_logo_capsule_height</item>     <!--  36dp -->
+        <item name="android:padding">@dimen/half_margin</item>                      <!--   8dp -->
+        <item name="android:background">@drawable/or_logo_capsule_background</item> <!-- background drawable -->
+    </style>
+</resources>
+```
+
+where `android:background` is overriden when `DisplayMode` changes to use:
+
+```kotlin
+@drawable/or_logo_capsule_stroke_color                    // AUTO
+@drawable/or_logo_capsule_stroke_color_light.xml          // LIGHT
+@drawable/or_logo_capsule_stroke_color_dark.xml           // DARK
+```
+_these are simple corner rounded bordered shapes_
+
+##### Remove the capsule
+
+To completely remove the capsule, you can override this style to remove the padding:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ORLogo">
+        <item name="android:layout_width">@dimen/or_logo_capsule_width</item>
+        <item name="android:layout_height">@dimen/or_logo_capsule_height</item>
+        <item name="android:padding">0dp</item> <!-- set the padding to zero -->
+        <item name="android:background">@drawable/or_logo_capsule_background</item>
+    </style>
+</resources>
+```
+and override the three drawable resources used as background with empty drawables:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector />
+```
+
 ### Apply your branding to the reader UI
 
 Many components of the reader UI can be customized to match your brand, And for you to do that you just need to override the definition os some color and drawable ressources. The complete reference can be found in [docs/config.md](./docs/config.md#readerconfig).
 
-### Sample project
+## Sample project
 
 A sample project is provided to help you implement the reader integration. It contains an example to unpack a complete archive and to open if with PdfReader class.
 
