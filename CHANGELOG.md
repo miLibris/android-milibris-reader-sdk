@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.1.1
+
+## Improvements
+- Article drop cap drawing
+
 # 1.1.0
 
 ## Features
