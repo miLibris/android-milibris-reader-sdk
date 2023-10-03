@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.2.0
+
+## Features
+- Add an option to hide the summary
+
 # 1.1.1
 
 ## Improvements
