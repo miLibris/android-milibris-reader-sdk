@@ -117,6 +117,7 @@ We are providing a ReaderSettings class where you can customize the reader as yo
     shareEnabled = true
     enableSummaryImages = true
     logo = R.drawable.milibris
+    isSummaryEnabled = true
 }  
 ```  
 
