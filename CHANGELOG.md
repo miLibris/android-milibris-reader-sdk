@@ -1,5 +1,12 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.2.1
+
+## Improvements
+- Add missing credits in the article reader photo caption
+- Fix header date format
+- Fix typing error in french tutorial
+
 # 1.2.0
 
 ## Features
