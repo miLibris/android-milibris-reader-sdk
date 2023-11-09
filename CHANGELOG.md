@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.3.0
+
+## Features
+- Performance improvements on PDF rendering
+- Memory usage improvements on PDF rendering
+
 # 1.2.1
 
 ## Improvements
