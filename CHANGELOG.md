@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.4.0
+
+## Features
+- Add an option to allow users to print currently displayed pages
+- Add an option to search in publication
+
 # 1.3.1
 
 ## Improvements

@@ -9,6 +9,8 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
     - [Read unpacked contents](#read-unpacked-contents)
 - [Customization](#customization)
     - [Optional Features](#optional-features)
+        - [Print](#print)
+        - [Search publication](#search-publication)
     - [Configure the reader tutorial](#configure-the-reader-tutorial)
     - [Event tracking](#event-tracking)
     - [Resume reading at the last read page](#resume-reading-at-the-last-read-page)
@@ -37,10 +39,10 @@ repositories {
 }
 
 dependencies {
-    api("com.milibris:one-reader:1.3.1") {   //If you ever have conflict with the version used in our libary add this line
+    api("com.milibris:one-reader:1.4.0") {   //If you ever have conflict with the version used in our libary add this line
         exclude group: "androidx.lifecycle"
     }
-    api("com.milibris:milibris-reader:1.3.1")
+    api("com.milibris:milibris-reader:1.4.0")
 }  
 ```  
 
@@ -92,14 +94,15 @@ Once unpacked, you can open the content by starting OneReaderActivity:
 // Initialize the reader to open the contents val productRepo = XmlPdfReaderDataSource(readerSettings) productRepo.init(applicationContext, contentPath)  
 startActivity(
     OneReaderActivity.newIntent(
-        this,
-        ReaderSettings(),
-        productRepo,
-        ORListener(dataSource = productRepo, "issueMid", this),
-        coverImageURL,
-        coverRatio
+        context = this,
+        readerSettings = ReaderSettings(),
+        productRepository = productRepo,
+        readerListener = ORListener(dataSource = productRepo, "issueMid", this),
+        searchProvider = CustomSearchProvider(), // @see Search publication optional feature
+        sharedElementImageUrl = coverImageURL,
+        sharedElementRatio = coverRatio
     )
-)  
+)
 ```  
 
 ## Customization
@@ -118,8 +121,46 @@ We are providing a ReaderSettings class where you can customize the reader as yo
     enableSummaryImages = true
     logo = R.drawable.milibris
     isSummaryEnabled = true
-}  
-```  
+    isPrintEnabled = true
+}
+```
+
+#### Print
+
+To allow users to print currently displayed pages we enable the `ReaderSettings` `isPrintEnabled` option.
+This feature is disabled by default.
+
+#### Search publication
+
+To enable searching in a publication, we are providing a provider:
+```kotlin
+OneReaderActivity.newIntent(
+    searchProvider = CustomSearchProvider(),
+)
+```
+
+This object implements the `SearchProvider` interface:
+
+```kotlin
+interface SearchProvider {
+    fun search(searchText: String, completion: (Result<SearchResponse>) -> Unit)
+}
+```
+
+@see [CustomSearchProvider.kt](app/src/main/java/com/milibris/reader/sdk/sample/CustomSearchProvider.kt)
+
+The search result can be:
+- a list of matching results `SearchResponseItem`
+- an empty list to present a "no result" screen
+- a failure to present a "technical error" screen
+
+Each `SearchResponseItem` must describe a `SearchResponseItemArticle` and a list of highlights `String`.
+
+For now:
+- only the first `highlight` is presented.
+- the `SearchResponse` `suggestions` are not used.
+
+By default, without any `SearchProvider` provided, this feature is disabled.
 
 ### Configure the reader tutorial
 
