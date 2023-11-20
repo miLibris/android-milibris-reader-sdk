@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.3.1
+
+## Improvements
+- Fix crash on PDF page rendering
+- Fix crash on article reader navigation
+
 # 1.3.0
 
 ## Features
