@@ -1,5 +1,6 @@
 package com.milibris.reader.sdk.sample
 
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,6 +11,10 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.updateLayoutParams
 import com.milibris.onereader.data.session.ReaderSettings
 import com.milibris.onereader.feature.OneReaderActivity
+import com.milibris.onereader.feature.search.SearchProvider
+import com.milibris.onereader.feature.search.model.SearchResponse
+import com.milibris.onereader.feature.search.model.SearchResponseItem
+import com.milibris.onereader.feature.search.model.SearchResponseItemArticle
 import com.milibris.reader.XmlPdfReaderDataSource
 import java.io.File
 import java.io.FileOutputStream
@@ -39,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         logoLight = R.drawable.milibris_light
         logoDark = R.drawable.milibris_dark
         isSummaryEnabled = true
+        isPrintEnabled = true
     }
     private lateinit var coverImageURL: String
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,15 +116,15 @@ class MainActivity : AppCompatActivity() {
             )
         startActivity(
             OneReaderActivity.newIntent(
-                this,
-                readerSettings,
-                productRepo,
-                ORListener(dataSource = productRepo, "issueMid", this),
-                coverImageURL,
-                coverRatio
+                context = this,
+                readerSettings = readerSettings,
+                productRepository = productRepo,
+                readerListener = ORListener(dataSource = productRepo, "issueMid", this),
+                searchProvider = CustomSearchProvider(),
+                sharedElementImageUrl = coverImageURL,
+                sharedElementRatio = coverRatio
             ),
             activityOptionsCompat.toBundle()
-
         )
     }
 
