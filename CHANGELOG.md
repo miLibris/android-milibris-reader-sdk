@@ -1,5 +1,16 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.5.0
+
+## Features
+- Improved error handling
+
+## Improvements
+- Fixes crashes due to session
+- Fixes crashes due to cache
+- Fixes crashes due to PDF rendering
+- Fixes on configuration changes
+
 # 1.4.0
 
 ## Features
