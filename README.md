@@ -39,10 +39,10 @@ repositories {
 }
 
 dependencies {
-    api("com.milibris:one-reader:1.5.0") {   //If you ever have conflict with the version used in our libary add this line
+    api("com.milibris:one-reader:1.5.1") {   //If you ever have conflict with the version used in our libary add this line
         exclude group: "androidx.lifecycle"
     }
-    api("com.milibris:milibris-reader:1.5.0")
+    api("com.milibris:milibris-reader:1.5.1")
 }  
 ```  
 

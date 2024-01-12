@@ -1,5 +1,12 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.5.1
+
+## Improvements
+- Fixes crashes that could occur due to session
+- Fixes article reader caption duplication
+- Adds missing credits in the article reader photo caption in automatic template resolution
+
 # 1.5.0
 
 ## Features
