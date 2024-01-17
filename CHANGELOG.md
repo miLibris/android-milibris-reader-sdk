@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.5.2
+
+## Improvements
+- Fixes article reader image caption format
+
 # 1.5.1
 
 ## Improvements
