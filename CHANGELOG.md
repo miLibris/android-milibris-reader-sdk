@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.6.0
+
+## Features
+- Add support for advertisement articles
+
 # 1.5.2
 
 ## Improvements
