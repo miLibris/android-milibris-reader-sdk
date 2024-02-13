@@ -17,10 +17,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile = file("../miLibris.jks")
+            storePassword = "miLibris"
+            keyAlias = "miLibris"
+            keyPassword = "miLibris"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')// , 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')//, 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -35,7 +50,7 @@ android {
     }
     namespace 'com.milibris.reader.sdk.sample'
 }
-ext.readerVersion = "1.6.0"
+ext.readerVersion = "1.6.1"
 
 dependencies {
 
