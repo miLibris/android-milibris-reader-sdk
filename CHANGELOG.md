@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.6.1
+
+## Improvements
+- Fixes summary parsing in some release cases
+- Fixes article reader not opening when no `ReaderListener` is provided
+
 # 1.6.0
 
 ## Features
