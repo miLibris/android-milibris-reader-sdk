@@ -1,5 +1,13 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.6.2
+
+## Improvements
+- Fixes compatibility with R8 full mode
+- Fixes a crash that could occur on API 21 when search feature was implemented
+- Fixes thrown error when miLibris reader manifest cannot be read
+- Strips html tags from photos credits
+
 # 1.6.1
 
 ## Improvements
