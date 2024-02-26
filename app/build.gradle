@@ -30,15 +30,17 @@ android {
         debug {
             minifyEnabled true
             signingConfig signingConfigs.debug
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')// , 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt') , 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
             signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')//, 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled = true
+
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -50,7 +52,7 @@ android {
     }
     namespace 'com.milibris.reader.sdk.sample'
 }
-ext.readerVersion = "1.6.1"
+ext.readerVersion = "1.6.2"
 
 dependencies {
 
@@ -66,5 +68,5 @@ dependencies {
         exclude group: "androidx.lifecycle"
     }
     api "com.milibris:milibris-reader:$readerVersion"
-
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
