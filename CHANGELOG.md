@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.6.3
+
+## Improvements
+- Fixes a crash that could occur when application is restored
+- Fixes crashes that could occur when article/pdf reader was closed
+
 # 1.6.2
 
 ## Improvements
