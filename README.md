@@ -39,11 +39,11 @@ repositories {
 }
 
 dependencies {
-    api("com.milibris:one-reader:1.6.2") {   //If you ever have conflict with the version used in our libary add this line
+    api("com.milibris:one-reader:1.6.3") {   //If you ever have conflict with the version used in our libary add this line
         exclude group: "androidx.lifecycle"
     }
-    api("com.milibris:milibris-reader:1.6.2")
-}  
+    api "com.milibris:milibris-reader:1.6.3"
+}
 ```  
 
 In order for the SDK to work properly you need to add the licence key provided in your manifest as below
