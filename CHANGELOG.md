@@ -1,5 +1,13 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.7.0
+
+## Features
+- Add an intermediate configuration for fonts
+- Hide article counter capsule and print button when zooming
+- Add an option to force articles layout
+- Add an option to trigger an event when a page stayed open for `x` seconds
+
 # 1.6.3
 
 ## Improvements

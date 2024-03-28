@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.updateLayoutParams
+import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.session.ReaderSettings
 import com.milibris.onereader.feature.OneReaderActivity
 import com.milibris.onereader.feature.search.SearchProvider
@@ -21,6 +22,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
+import java.util.concurrent.TimeUnit
 
 /**
  * Main activity unpacking and reading a content with PDF reader.
@@ -45,6 +47,16 @@ class MainActivity : AppCompatActivity() {
         logoDark = R.drawable.milibris_dark
         isSummaryEnabled = true
         isPrintEnabled = true
+
+        /**
+         * Force a layout on all articles
+         */
+        articleForceLayout = IArticle.Layout.DEFAULT
+
+        /**
+         * Time a page stays visible before [ORListener.onIssuePageReadAfter] is called
+         */
+        issuePageReadAfter = TimeUnit.SECONDS.toMillis(3)
     }
     private lateinit var coverImageURL: String
     override fun onCreate(savedInstanceState: Bundle?) {

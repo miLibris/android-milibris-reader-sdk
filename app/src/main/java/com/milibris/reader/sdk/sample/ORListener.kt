@@ -35,6 +35,10 @@ class ORListener(
         Log.e(TAG, "onIssuePageRead at page : $pageNumber")
     }
 
+    override fun onIssuePageReadAfter(pageNumber: Int, isCalledFromArticles: Boolean) {
+        Log.e(TAG, "onIssuePageReadAfter at page : $pageNumber")
+    }
+
     override fun onSummaryOpened(isOpenedFromArticles: Boolean) {
         Log.e(TAG, "onSummaryOpened isOpenedFromArticles:: $isOpenedFromArticles")
     }
