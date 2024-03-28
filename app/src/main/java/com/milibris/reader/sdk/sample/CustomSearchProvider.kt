@@ -10,23 +10,23 @@ class CustomSearchProvider : SearchProvider {
 
     private val maecenasArticle = object : SearchResponseItemArticle {
         override val mid: String
-            get() = "79ee8871-f510-438b-b9bb-1b66210dec80"
+            get() = "42d5551d-f22e-4f55-9881-8731da68ec75"
         override val uri: Uri
-            get() = Uri.parse("../content/articles/79ee8871-f510-438b-b9bb-1b66210dec80.html")
+            get() = Uri.parse("../content/articles/c3fd74c7-0d4b-43e0-a86e-2e2fce4385cd.html")
         override val jsonUri: Uri
-            get() = Uri.parse("")
+            get() = Uri.parse("../content/articles/c3fd74c7-0d4b-43e0-a86e-2e2fce4385cd.json")
         override val title: String
-            get() = "<em class=\"highlight\">Maecenas</em> aliquam purus sodales mauris, eu vehicula lectus velit"
+            get() = "<em class=\"highlight\">Maecenas</em> aliquam eu vehicula lectus velit"
         override val rubric: String
-            get() = "MILIBRIS"
+            get() = ""
         override val readingTime: Int
-            get() = -1
+            get() = 1
         override val firstPageNumber: Int
-            get() = 5
+            get() = 10
         override val lastPageNumber: Int
             get() = firstPageNumber
         override val abbrev: String
-            get() = "Praesent malesuada. bibendum. Donec feugiat tempor libero. Nam uut, massa. Maecenas vitae ante et lacus aliquam hendrerit. Curabitur nunc eros, euismod in, convallis at, vehicula sed consectetuer posuere, eros mauris dignissim diam, pretium sed pede suscipit: Adiam purus, in consectetuer Proin in sapien. Fusce urna non magna,neque eget lacus. Maecenas felis nunc, aliquam ac, consequat vitae, feugi"
+            get() = "Praesent malesuada. bibendum. Donec feugiat tempor libero. Nam uut, massa. Maecenas vitae ante et lacus aliquam hendrerit. Curabitur nunc eros, euismod in, convallis at, vehicula sed consectetuer posuere, eros mauris dignissim diam, pretium sed pede suscipit: Adiam condimentum purus, in consectetuer Proin in sapien. Fusce urna magna,neque eget lacus. Maecenas felis nunc, aliquam ac, consequat vita"
 
         override fun getThumbnailPath(): String? = null
     }
