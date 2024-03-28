@@ -9,10 +9,9 @@ import com.milibris.onereader.data.product.Box
 import com.milibris.onereader.data.session.ReaderListener
 import com.milibris.onereader.feature.OneReaderActivity
 import com.milibris.onereader.repository.BaseListener
-import com.milibris.reader.XmlPdfReaderDataSource
 
 class ORListener(
-    val dataSource: XmlPdfReaderDataSource,
+    private val productRepo: BookmarkProductRepository,
     private val issueMid: String,
     private val context: Context
 ) : ReaderListener {
@@ -44,9 +43,9 @@ class ORListener(
     }
 
     override fun onShareClicked(article: IArticle) {
-        val milibrisArticle = dataSource.getMilibrisArticle(article)
+        val milibrisArticle = productRepo.getMilibrisArticle(article)
         val articleUrl =
-            "${dataSource.readerSettings.shareUrl}/share/article/$issueMid/${milibrisArticle?.mid}"
+            "${productRepo.readerSettings.shareUrl}/share/article/$issueMid/${milibrisArticle?.mid}"
         val intentBuilder = ShareCompat.IntentBuilder(context)
             .setType("text/plain")
             .setText(articleUrl)
@@ -59,9 +58,6 @@ class ORListener(
 
     override fun onArticleChange(article: IArticle) {
         Log.e(TAG, "onArticleChange :: article title  ${article.title}")
-    }
-
-    override fun onArticleBookMarkClicked(article: IArticle, isFromArticleView: Boolean, bookmarkListener: BaseListener<Boolean>) {
     }
 
     override fun onMiniSummaryOpened() {
@@ -80,4 +76,11 @@ class ORListener(
         Log.e("ORListener", "shouldOpenArticle")
         return true
     }
+
+    // region Bookmark
+    override fun onArticleBookMarkClicked(article: IArticle, isFromArticleView: Boolean, bookmarkListener: BaseListener<Boolean>) {
+        val isBookmarked = productRepo.toggleBookmarkState(article.id!!)
+        bookmarkListener.onSuccessListener(isBookmarked)
+    }
+    // endregion
 }
