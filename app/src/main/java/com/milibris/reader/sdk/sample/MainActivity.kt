@@ -1,6 +1,5 @@
 package com.milibris.reader.sdk.sample
 
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -9,18 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.updateLayoutParams
+import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.session.ReaderSettings
 import com.milibris.onereader.feature.OneReaderActivity
-import com.milibris.onereader.feature.search.SearchProvider
-import com.milibris.onereader.feature.search.model.SearchResponse
-import com.milibris.onereader.feature.search.model.SearchResponseItem
-import com.milibris.onereader.feature.search.model.SearchResponseItemArticle
-import com.milibris.reader.XmlPdfReaderDataSource
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
+import java.util.concurrent.TimeUnit
 
 /**
  * Main activity unpacking and reading a content with PDF reader.
@@ -29,7 +25,7 @@ import java.io.OutputStream
  * Milibris
  */
 class MainActivity : AppCompatActivity() {
-    private lateinit var productRepo: XmlPdfReaderDataSource
+    private lateinit var productRepo: BookmarkProductRepository
     private val pdfName = "milibris_sample"
     private var coverRatio: Float = 0f
     private var targetPage: Int = 1
@@ -45,6 +41,21 @@ class MainActivity : AppCompatActivity() {
         logoDark = R.drawable.milibris_dark
         isSummaryEnabled = true
         isPrintEnabled = true
+
+        /**
+         * Force a layout on all articles
+         */
+        articleForceLayout = IArticle.Layout.DEFAULT
+
+        /**
+         * Time a page stays visible before [ORListener.onIssuePageReadAfter] is called
+         */
+        issuePageReadAfter = TimeUnit.SECONDS.toMillis(3)
+
+        /**
+         * Enable bookmark feature
+         */
+        bookmarkEnabled = true
     }
     private lateinit var coverImageURL: String
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,7 +106,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun prepareProductRepo() {
         // Initialize the reader to open the contents
-        productRepo = XmlPdfReaderDataSource(readerSettings)
+        productRepo = BookmarkProductRepository(readerSettings)
         productRepo.init(applicationContext, contentPath)
     }
 
@@ -119,7 +130,7 @@ class MainActivity : AppCompatActivity() {
                 context = this,
                 readerSettings = readerSettings,
                 productRepository = productRepo,
-                readerListener = ORListener(dataSource = productRepo, "issueMid", this),
+                readerListener = ORListener(productRepo = productRepo, "issueMid", this),
                 searchProvider = CustomSearchProvider(),
                 sharedElementImageUrl = coverImageURL,
                 sharedElementRatio = coverRatio
