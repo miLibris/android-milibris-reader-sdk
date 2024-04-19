@@ -1,5 +1,15 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.8.0
+
+## Features
+- Add text to speech in background
+- Add support for releases built on multiple PDFs containing multiple pages
+
+## Improvements
+- Fix HTML decoding on titles, abstract and author
+- Fix a crash that could occur on invalid summary definitions
+
 # 1.7.0
 
 ## Features
