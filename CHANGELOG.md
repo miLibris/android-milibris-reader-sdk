@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.8.1
+
+## Improvements
+- Match double tap zoom with iOS implementation
+- Fix PDF rendering performances that could be progressively slowed down
+
 # 1.8.0
 
 ## Features
