@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.8.2
+
+## Improvements
+- Allow article rubric to be multi-line to prevent ellipsis
+
 # 1.8.1
 
 ## Improvements
