@@ -1,5 +1,15 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.9.0
+
+## Features
+- Show a given page as an interstitial advert when opening an edition
+- Improve multimedia boxes visibility
+
+## Improvements
+- Fix pagination sensitivity to improve panning inside a zoomed page
+- Fix potential partial blurred PDF renders
+
 # 1.8.2
 
 ## Improvements
