@@ -1,5 +1,12 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.9.1
+
+## Improvements
+- Prevent interaction with PDF reader when page as an interstitial advert is shown
+- Fix pagination on slideshow enrichments
+- Fix pagination on advert article in article reader
+
 # 1.9.0
 
 ## Features
