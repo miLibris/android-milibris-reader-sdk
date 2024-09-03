@@ -1,5 +1,20 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.0
+
+## Features
+- Add an alternative tutorial screen for when long press on article is enabled
+- Add an option to let users select article text – _disabled by default_
+- Add visual feedback on interactions with article reader bottom bar
+
+> [!NOTE]  
+> The `ReaderListener.shouldOpenArticle` function prototype had to be changed to comply with an internal change.
+> Diff to update to this change:
+```diff
+- override fun shouldOpenArticle(oneReaderActivity: OneReaderActivity, article: IArticle): Boolean
++ override fun shouldOpenArticle(oneReaderActivity: FragmentActivity, article: IArticle): Boolean
+```
+
 # 1.9.1
 
 ## Improvements
