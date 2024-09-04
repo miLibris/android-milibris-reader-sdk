@@ -3,11 +3,11 @@ package com.milibris.reader.sdk.sample
 import android.content.Context
 import android.util.Log
 import androidx.core.app.ShareCompat
+import androidx.fragment.app.FragmentActivity
 import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.article.TextToPlayState
 import com.milibris.onereader.data.product.Box
 import com.milibris.onereader.data.session.ReaderListener
-import com.milibris.onereader.feature.OneReaderActivity
 import com.milibris.onereader.repository.BaseListener
 
 class ORListener(
@@ -72,7 +72,7 @@ class ORListener(
         Log.e("ORListener", "onEnrichmentClicked")
     }
 
-    override fun shouldOpenArticle(oneReaderActivity: OneReaderActivity, article: IArticle): Boolean {
+    override fun shouldOpenArticle(oneReaderActivity: FragmentActivity, article: IArticle): Boolean {
         Log.e("ORListener", "shouldOpenArticle")
         return true
     }
