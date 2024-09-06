@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.1
+
+## Improvements
+- Fix a bug preventing cover zoom-in animation transition – _introduced in `1.10.0`_
+
 # 1.10.0
 
 ## Features
