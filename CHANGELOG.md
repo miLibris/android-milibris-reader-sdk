@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.2
+
+## Improvements
+- Fix an ANR on article reader when dropcap text is empty
+
 # 1.10.1
 
 ## Improvements
