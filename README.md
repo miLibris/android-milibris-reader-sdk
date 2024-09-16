@@ -5,6 +5,8 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
 - [Prerequisites](#prerequisites)
     - [Setup](#setup)
 - [Implementation](#implementation)
+    * [Usual workflow](#usual-workflow)
+    - [Download a complete archive](#download-a-complete-archive)
     - [Unpack a complete archive with MLFoundation](#unpack-a-complete-archive-with-mlfoundation)
     - [Read unpacked contents](#read-unpacked-contents)
 - [Customization](#customization)
@@ -58,12 +60,22 @@ In order for the SDK to work properly you need to add the licence key provided i
 
 ## Implementation
 
+### Usual workflow
+
 In order to read a content, your application will likely implement the following steps:
 
 1. Download a complete archive (with the *.complete extension) from the miLibris  
    platform.
 2. Unpack the archive using MLFoundation
 3. Launch Reader to read the unpacked contents
+
+### Download a complete archive
+
+Refer to the miLibris API documentation to obtain a ticket for the issue you want to download, in the `x-ml-pdf` format.
+
+You can then download the complete archive with the following URL: `https://content.milibris.com/access/%@/download.complete` (replace `%@` with the mid of your ticket).
+
+The JWT token returned by the API can be ignored.
 
 ### Unpack a complete archive with MLFoundation
 
