@@ -13,6 +13,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
     - [Optional Features](#optional-features)
         - [Print](#print)
         - [Search publication](#search-publication)
+        - [Interstitial advert](#interstitial-advert)
     - [Configure the reader tutorial](#configure-the-reader-tutorial)
     - [Event tracking](#event-tracking)
     - [Resume reading at the last read page](#resume-reading-at-the-last-read-page)
@@ -174,6 +175,19 @@ For now:
 - the `SearchResponse` `suggestions` are not used.
 
 By default, without any `SearchProvider` provided, this feature is disabled.
+
+#### Interstitial advert
+
+The reader can present a page as an interstitial advert when an issue is opened.
+To enable this feature, the reader must be provided a `PageAdRepository` implementation.
+The miLibris reader includes a default one that allows the interstitial to be shown the first time an issue is opened:
+
+```kotlin
+OneReaderActivity.newIntent(
+    productRepository = productRepo,
+    pageAdRepository = MiLibrisPageAdRepository(productRepository),
+)
+```
 
 ### Configure the reader tutorial
 

@@ -11,6 +11,7 @@ import androidx.core.view.updateLayoutParams
 import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.session.ReaderSettings
 import com.milibris.onereader.feature.OneReaderActivity
+import com.milibris.reader.advert.MiLibrisPageAdRepository
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -132,6 +133,7 @@ class MainActivity : AppCompatActivity() {
                 productRepository = productRepo,
                 readerListener = ORListener(productRepo = productRepo, "issueMid", this),
                 searchProvider = CustomSearchProvider(),
+                pageAdRepository = MiLibrisPageAdRepository(productRepo),
                 sharedElementImageUrl = coverImageURL,
                 sharedElementRatio = coverRatio
             ),
