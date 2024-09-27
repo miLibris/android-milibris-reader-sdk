@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.3
+
+## Improvements
+- Fix on the page as interstitial issue state in the miLibris implementation
+
 # 1.10.2
 
 ## Improvements
