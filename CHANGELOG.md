@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.4
+
+## Improvements
+- Fix on text to speech so it is disabled when `textToSpeechEnabled` is set to `false`
+
 # 1.10.3
 
 ## Improvements
