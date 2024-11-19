@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.10.5
+
+## Improvements
+- Fix a rare crash on cache management
+- Fix rares crashes on screen updates
+
 # 1.10.4
 
 ## Improvements
