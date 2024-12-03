@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.11.0
+
+## Features
+- Add `ReaderListener.onArticlesClosed` to notify when article is closed (while swiping or closing the reader).
+
 # 1.10.5
 
 ## Improvements
