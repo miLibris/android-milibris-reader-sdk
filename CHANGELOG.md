@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.12.0
+
+## Features
+- Upgrade to Android 15 and display content edge-to-edge
+
 # 1.11.0
 
 ## Features
