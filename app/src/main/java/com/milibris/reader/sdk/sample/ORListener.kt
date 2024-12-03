@@ -60,6 +60,10 @@ class ORListener(
         Log.e(TAG, "onArticleChange :: article title  ${article.title}")
     }
 
+    override fun onArticlesClosed(article: IArticle) {
+        Log.e(TAG, "onArticlesClosed :: article title  ${article.title}")
+    }
+
     override fun onMiniSummaryOpened() {
         Log.e(TAG, "onMiniSummaryOpened")
     }
