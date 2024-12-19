@@ -1,5 +1,13 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.13.0
+
+## Features
+- `ReaderListener` receives notifications when PDF reader and article reader goes into background and comes back to foreground
+
+## Improvements
+- Fix on `ReaderListener.onArticlesOpen` not receiving the currently visible article when article reader is opened standalone
+
 # 1.12.0
 
 ## Features

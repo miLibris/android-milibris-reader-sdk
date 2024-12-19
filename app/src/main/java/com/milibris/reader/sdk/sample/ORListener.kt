@@ -34,6 +34,16 @@ class ORListener(
         Log.e(TAG, "onIssuePageRead at page : $pageNumber")
     }
 
+    override fun onIssuePagePaused(pageNumber: Int) {
+        super.onIssuePagePaused(pageNumber)
+        Log.e(TAG, "onIssuePagePaused at page : $pageNumber")
+    }
+
+    override fun onIssuePageResumed(pageNumber: Int) {
+        super.onIssuePageResumed(pageNumber)
+        Log.e(TAG, "onIssuePageResumed at page : $pageNumber")
+    }
+
     override fun onIssuePageReadAfter(pageNumber: Int, isCalledFromArticles: Boolean) {
         Log.e(TAG, "onIssuePageReadAfter at page : $pageNumber")
     }
@@ -53,7 +63,17 @@ class ORListener(
     }
 
     override fun onArticlesOpened(article: IArticle) {
-        Log.e(TAG, "ORListener :: article title  ${article.title}")
+        Log.e(TAG, "onArticlesOpened :: article title  ${article.title}")
+    }
+
+    override fun onArticlePaused(article: IArticle) {
+        super.onArticlePaused(article)
+        Log.e(TAG, "onArticlePaused :: article title  ${article.title}")
+    }
+
+    override fun onArticleResumed(article: IArticle) {
+        super.onArticleResumed(article)
+        Log.e(TAG, "onArticleResumed :: article title  ${article.title}")
     }
 
     override fun onArticleChange(article: IArticle) {
