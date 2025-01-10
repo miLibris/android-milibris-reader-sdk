@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.13.1
+
+## Improvements
+- Fix images format support for miLibris articles
+
 # 1.13.0
 
 ## Features
