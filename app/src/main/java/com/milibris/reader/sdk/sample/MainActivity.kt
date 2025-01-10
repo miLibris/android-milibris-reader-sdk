@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private var targetPage: Int = 1
     private val readerSettings = ReaderSettings().apply {
         isFaceCropEnabled = true
-        debugBoxes = true
+        debugBoxes = false
         targetPageNumber = targetPage
         textToSpeechEnabled = true
         shareEnabled = true

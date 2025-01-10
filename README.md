@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    def miLibrisReader = "1.13.0"
+    def miLibrisReader = "1.13.1"
     api("com.milibris:one-reader:$miLibrisReader") {   //If you ever have conflict with the version used in our library add this line
         exclude group: "androidx.lifecycle"
     }
