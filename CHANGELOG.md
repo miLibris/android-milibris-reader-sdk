@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.13.2
+
+## Improvements
+- Fix reader pagination when opened in offline mode
+
 # 1.13.1
 
 ## Improvements
