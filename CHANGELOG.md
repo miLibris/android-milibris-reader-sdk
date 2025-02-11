@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.13.3
+
+## Improvements
+- Fix boxes rendering: article boxes will no longer appear when UI is toggled to be shown
+
 # 1.13.2
 
 ## Improvements
