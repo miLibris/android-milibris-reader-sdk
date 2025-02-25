@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.13.4
+
+## Improvements
+- Fix a potential crash from the interstitial advert shown when opening a release
+
 # 1.13.3
 
 ## Improvements
