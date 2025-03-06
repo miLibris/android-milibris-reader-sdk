@@ -107,4 +107,8 @@ class ORListener(
         bookmarkListener.onSuccessListener(isBookmarked)
     }
     // endregion
+
+    override fun onArticleReaderTitleOrLogoClicked(article: IArticle) {
+        Log.e("ORListener", "onArticleReaderTitleOrLogoClicked($article)")
+    }
 }

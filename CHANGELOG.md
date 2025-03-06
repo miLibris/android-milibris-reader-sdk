@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.14.0
+
+## Features
+- `ReaderListener` receives notifications when article reader top app bar title or logo is clicked
+
 # 1.13.4
 
 ## Improvements
