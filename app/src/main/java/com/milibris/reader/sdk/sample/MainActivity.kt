@@ -11,7 +11,10 @@ import androidx.core.view.updateLayoutParams
 import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.session.ReaderSettings
 import com.milibris.onereader.feature.OneReaderActivity
+import com.milibris.onereader.feature.search.SearchProvider
+import com.milibris.reader.XmlPdfReaderDataSource
 import com.milibris.reader.advert.MiLibrisPageAdRepository
+import com.milibris.reader.search.MiLibrisSearchProvider
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -132,7 +135,8 @@ class MainActivity : AppCompatActivity() {
                 readerSettings = readerSettings,
                 productRepository = productRepo,
                 readerListener = ORListener(productRepo = productRepo, "issueMid", this),
-                searchProvider = CustomSearchProvider(),
+                searchProvider = MiLibrisSearchProvider(this, "", "", "", "", productRepo as XmlPdfReaderDataSource),
+                // searchProvider = CustomSearchProvider(),
                 pageAdRepository = MiLibrisPageAdRepository(productRepo),
                 sharedElementImageUrl = coverImageURL,
                 sharedElementRatio = coverRatio

@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.15.0
+
+## Features
+- Add an option to override default search in publication endpoint
+
 # 1.14.0
 
 ## Features
