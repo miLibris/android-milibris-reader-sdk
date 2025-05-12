@@ -16,7 +16,11 @@
         <meta-data
             android:name="com.milibris.pdfreader.licencekey"
             android:value="@string/license_key" />
-
+        <!--
+        <meta-data
+            android:name="com.milibris.api.v4.baseUrl"
+            android:value="TARGET_BASE_URL" />
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true">

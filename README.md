@@ -4,6 +4,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
 
 - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+      - [Environment](#environment)
 - [Implementation](#implementation)
     * [Usual workflow](#usual-workflow)
     - [Download a complete archive](#download-a-complete-archive)
@@ -42,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    def miLibrisReader = "1.14.0"
+    def miLibrisReader = "1.15.0"
     api("com.milibris:one-reader:$miLibrisReader") {   //If you ever have conflict with the version used in our library add this line
         exclude group: "androidx.lifecycle"
     }
@@ -56,6 +57,18 @@ In order for the SDK to work properly you need to add the licence key provided i
 
 <application....>
     <meta-data android:name="com.milibris.pdfreader.licencekey" android:value="YOUR_LICENCE_KEY" />
+</application>  
+```  
+
+#### Environment
+
+By default, the SDK will communicate with miLibris production environment.
+To change the target, you can override the base URL in your manifest as below
+
+```xml
+
+<application....>
+    <meta-data android:name="com.milibris.api.v4.baseUrl" android:value="TARGET_BASE_URL" />
 </application>  
 ```  
 
