@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk 35
-    buildToolsVersion "35.0.0"
+    compileSdk 36
+    buildToolsVersion "36.0.0"
 
     defaultConfig {
         applicationId "com.milibris.reader.sdk.sample"
         minSdk 21
-        targetSdk 35
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
@@ -28,7 +28,6 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt') , 'proguard-rules.pro'
         }
@@ -40,15 +39,15 @@ android {
     }
     compileOptions {
         coreLibraryDesugaringEnabled = true
-
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        // Sets Java compatibility to Java 11
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
     androidResources {
-        noCompress ''
+        noCompress += "milibris_sample.complete"
     }
     namespace 'com.milibris.reader.sdk.sample'
 }
@@ -57,16 +56,16 @@ ext.readerVersion = "1.15.0"
 dependencies {
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
-    implementation 'androidx.core:core-ktx:1.15.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.7'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-    api("com.milibris:one-reader:$readerVersion") {
+    api "com.milibris:milibris-reader:1.16.0"
+    api("com.milibris:one-reader:1.16.0") {
         exclude group: "androidx.lifecycle"
     }
-    api "com.milibris:milibris-reader:$readerVersion"
 }
