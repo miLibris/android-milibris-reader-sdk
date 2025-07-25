@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.16.0
+
+## Features
+- Support for [16 KB page sizes](https://developer.android.com/guide/practices/page-sizes)
+
 # 1.15.0
 
 ## Features
