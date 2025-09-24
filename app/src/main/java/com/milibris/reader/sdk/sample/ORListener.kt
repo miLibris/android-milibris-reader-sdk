@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.FragmentActivity
+import com.milibris.onereader.data.DisplayMode
 import com.milibris.onereader.data.article.IArticle
 import com.milibris.onereader.data.article.TextToPlayState
 import com.milibris.onereader.data.product.Box
@@ -82,6 +83,10 @@ class ORListener(
 
     override fun onArticlesClosed(article: IArticle) {
         Log.e(TAG, "onArticlesClosed :: article title  ${article.title}")
+    }
+
+    override fun articleReaderSettingUpdated(displayMode: DisplayMode, textSize: Int, lineSpacing: Int) {
+        Log.e(TAG, "articleReaderSettingUpdated :: displayMode: $displayMode, testSize: $textSize, lineSpacing: $lineSpacing")
     }
 
     override fun onMiniSummaryOpened() {

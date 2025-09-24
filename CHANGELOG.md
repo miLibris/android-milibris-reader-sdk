@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.17.1
+
+## Improvements
+- Fix a case where article reader settings event wasn't send to `ReaderListener`
+
 # 1.17.0
 
 ## Features
