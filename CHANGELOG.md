@@ -1,5 +1,11 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.17.0
+
+## Features
+- Add a way to inject a `Logger` to intercept OneReader logs
+- Rework obfuscation to prevent conflicts with other obfuscated library
+
 # 1.16.1
 
 ## Improvements
