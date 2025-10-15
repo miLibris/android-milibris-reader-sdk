@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.17.2
+
+## Improvements
+- Fix on interstitial translations for all languages
+
 # 1.17.1
 
 ## Improvements
