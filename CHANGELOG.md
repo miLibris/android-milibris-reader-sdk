@@ -1,4 +1,8 @@
 # MiLibrisReaderSDK Android changelog
+# 1.17.3
+
+## Improvements
+- Fix on a potential crash while rendering an issue page
 
 # 1.17.2
 
