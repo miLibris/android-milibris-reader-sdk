@@ -1,4 +1,10 @@
 # MiLibrisReaderSDK Android changelog
+# 1.17.4
+
+## Improvements
+- Fix on summary to hide bookmark button when it is disabled but article has a state
+- Fix on article reader to update bookmark state based on `ReaderListener`'s callback response
+
 # 1.17.3
 
 ## Improvements
