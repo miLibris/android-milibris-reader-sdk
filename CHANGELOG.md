@@ -1,4 +1,8 @@
 # MiLibrisReaderSDK Android changelog
+# 1.17.5
+## Improvements
+- Fix on article reader scrolling precedence over pagination
+
 # 1.17.4
 
 ## Improvements
