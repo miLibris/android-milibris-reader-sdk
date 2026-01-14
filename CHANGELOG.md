@@ -1,5 +1,14 @@
 # MiLibrisReaderSDK Android changelog
+
+# 1.17.6
+
+## Improvements
+- Fix on slideshow enrichment potential crash
+- Improve support on Android 15 recommendations
+
+
 # 1.17.5
+
 ## Improvements
 - Fix on article reader scrolling precedence over pagination
 
