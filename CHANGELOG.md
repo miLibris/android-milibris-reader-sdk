@@ -1,11 +1,17 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.17.7
+
+## Improvements
+- Fix on potential crashes while closing the article reader
+- Fix on a potential crash in the html article reader
+- Fix on a potential crash while rendering a PDF page
+
 # 1.17.6
 
 ## Improvements
 - Fix on slideshow enrichment potential crash
 - Improve support on Android 15 recommendations
-
 
 # 1.17.5
 
