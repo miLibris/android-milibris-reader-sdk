@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.18.0
+
+## Features
+- Add support for Deutsch language
+
 # 1.17.7
 
 ## Improvements
