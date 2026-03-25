@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.19.1
+
+## Improvements
+- Fix flatplan article list titles formatting
+
 # 1.19.0
 
 ## Features
