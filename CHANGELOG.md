@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.19.0
+
+## Features
+- Add resource configurations for boxes color by type.
+
 # 1.18.0
 
 ## Features

@@ -134,6 +134,14 @@ The config for an instance of the reader.
 | 2     | or_progress_color                             | Color   | light : #86949B / dark : #B4B4B4   | The progress loading color when loading.                                                       |
 | 3     | or_background_color                           | Color   | light: #E5E5E5 / dark: #1F1F1F     | The background color.                                                                          |
 | 4     | or_box_color                                  | Color   | #86949B 40%                        | The color used to highlight boxes on page turn.                                                |
+| 4     | or_box_article_color                          | Color   | @or_box_color                      | The color used to highlight article boxes on page turn.                                        |
+| 4     | or_box_internal_link_color                    | Color   | @or_box_color                      | The color used to highlight article boxes on page turn.                                        |
+| 4     | or_box_video_color                            | Color   | @or_box_color                      | The color used to highlight video boxes on page turn.                                          |
+| 4     | or_box_audio_color                            | Color   | @or_box_color                      | The color used to highlight audio boxes on page turn.                                          |
+| 4     | or_box_mail_link_color                        | Color   | @or_box_color                      | The color used to highlight mail link boxes on page turn.                                      |
+| 4     | or_box_external_link_color                    | Color   | @or_box_color                      | The color used to highlight external link boxes on page turn.                                  |
+| 4     | or_box_html_color                             | Color   | @or_box_color                      | The color used to highlight html boxes on page turn.                                           |
+| 4     | or_box_slideshow_color                        | Color   | @or_box_color                      | The color used to highlight slideshow boxes on page turn.                                      |
 | 4     | debugBoxes                                    | Boolean | true                               | Display boxes position with a transparent overlay.                                             |
 | 4     | enabledDoublePage                             | Boolean | true                               | If false, always display single pages, even in landscape.                                      |
 | 4     | shouldEnableLongPressOnArticles               | Boolean | true                               | Enable the long press gesture to open articles.                                                |
@@ -150,7 +158,7 @@ The config for an instance of the reader.
 | 8     | or_flat_plan_selected_color                   | Color   | light: #536067 / dark: #B4B4B4     | The color of the border in the flatplan when selected.                                         |
 | 8     | or_flat_plan_selected_color                   | Color   | light: #536067 / dark: #B4B4B4     | The color of the text in the flatplan when selected.                                           |
 | 8     | or_flat_plan_text_color                       | Color   | light: #536067 / dark: #FFFFFF     | The color of the text in the flatplan when not selected.                                       |
-| 9     | isSummaryEnabled                              | Boolean | true                               | Enable or disable the summary |
+| 9     | isSummaryEnabled                              | Boolean | true                               | Enable or disable the summary                                                                  |
 
 ## MiniSummaryConfig
 
