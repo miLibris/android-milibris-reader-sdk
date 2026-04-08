@@ -15,6 +15,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
         - [Print](#print)
         - [Search publication](#search-publication)
         - [Interstitial advert](#interstitial-advert)
+        - [Page bookmark](#page-bookmark)
     - [Configure the reader tutorial](#configure-the-reader-tutorial)
     - [Event tracking](#event-tracking)
     - [Resume reading at the last read page](#resume-reading-at-the-last-read-page)
@@ -43,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    def miLibrisReader = "1.19.1"
+    def miLibrisReader = "1.20.0"
     api("com.milibris:one-reader:$miLibrisReader") {   //If you ever have conflict with the version used in our library add this line
         exclude group: "androidx.lifecycle"
     }
@@ -200,6 +201,31 @@ OneReaderActivity.newIntent(
     productRepository = productRepo,
     pageAdRepository = MiLibrisPageAdRepository(productRepository),
 )
+```
+
+#### Page bookmark
+
+To enable page bookmark, activate the setting.
+```kotlin
+val settings = ReaderSettings(
+    isPageBookmarkEnabled = true
+)
+```
+
+Then implement the `ReaderListener` methods to provide the bookmark states and handle the changes:
+
+```kotlin
+override fun isPageBookMarked(page: Int): Boolean? {
+    // Get current state
+    return pageBookmarkRepository.getState(page)
+}
+
+override fun onPageBookMarkClicked(page: Int, bookmarkListener: BaseListener<Boolean>) {
+    // Toggle state
+    val newState: Boolean = pageBookmarkRepository.toggleState(page)
+    // Provide new state to the reader
+    bookmarkListener.onSuccessListener(newState)
+}
 ```
 
 ### Configure the reader tutorial

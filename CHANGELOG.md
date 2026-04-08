@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.20.0
+
+## Features
+- Add page bookmark feature
+
 # 1.19.1
 
 ## Improvements

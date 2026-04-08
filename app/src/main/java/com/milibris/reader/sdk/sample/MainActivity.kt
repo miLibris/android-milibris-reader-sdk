@@ -60,6 +60,11 @@ class MainActivity : AppCompatActivity() {
          * Enable bookmark feature
          */
         bookmarkEnabled = true
+
+        /**
+         * Page bookmark
+         */
+        isPageBookmarkEnabled = true
     }
     private lateinit var coverImageURL: String
     override fun onCreate(savedInstanceState: Bundle?) {
