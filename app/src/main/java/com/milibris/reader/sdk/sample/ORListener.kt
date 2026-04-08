@@ -116,4 +116,16 @@ class ORListener(
     override fun onArticleReaderTitleOrLogoClicked(article: IArticle) {
         Log.e("ORListener", "onArticleReaderTitleOrLogoClicked($article)")
     }
+
+    // region Page bookmark
+    private val bookmarkedPages = mutableMapOf<Int, Boolean>()
+    override fun isPageBookMarked(page: Int): Boolean? =
+        bookmarkedPages.getOrDefault(page, false)
+
+    override fun onPageBookMarkClicked(page: Int, bookmarkListener: BaseListener<Boolean>) {
+        val newState = !bookmarkedPages.getOrDefault(page, false)
+        bookmarkedPages[page] = newState
+        bookmarkListener.onSuccessListener(bookmarkedPages.getOrDefault(page, false))
+    }
+    // endregion
 }
