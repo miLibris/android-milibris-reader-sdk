@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.20.1
+
+## Improvements
+- Remove Deutsch translation for `app_name`
+
 # 1.20.0
 
 ## Features
