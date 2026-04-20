@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.20.2
+
+## Improvements
+- Fix on article reader loading state
+
 # 1.20.1
 
 ## Improvements
