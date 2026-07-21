@@ -16,6 +16,7 @@ MiLibrisReaderSDK is the new miLibris reading SDK (previously called MLPDFReader
         - [Search publication](#search-publication)
         - [Interstitial advert](#interstitial-advert)
         - [Page bookmark](#page-bookmark)
+        - [Article reader primary button](#article-reader-primary-button)
     - [Configure the reader tutorial](#configure-the-reader-tutorial)
     - [Event tracking](#event-tracking)
     - [Resume reading at the last read page](#resume-reading-at-the-last-read-page)
@@ -44,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    def miLibrisReader = "1.20.2"
+    def miLibrisReader = "1.21.0"
     api("com.milibris:one-reader:$miLibrisReader") {   //If you ever have conflict with the version used in our library add this line
         exclude group: "androidx.lifecycle"
     }
@@ -225,6 +226,25 @@ override fun onPageBookMarkClicked(page: Int, bookmarkListener: BaseListener<Boo
     val newState: Boolean = pageBookmarkRepository.toggleState(page)
     // Provide new state to the reader
     bookmarkListener.onSuccessListener(newState)
+}
+```
+
+#### Article reader primary button
+
+To enable primary button:
+```kotlin
+val settings = ReaderSettings(
+    articleReaderPrimaryButtonEnabled = true
+)
+```
+
+Customize the icon by overriding `R.drawable.ic_or_article_reader_primary`.
+Customize the color by overriding `R.color.or_article_reader_primary_background_light` and `R.color.or_article_reader_primary_background_dark` 
+
+Then implement the `ReaderListener` method to react to clicks:
+
+```kotlin
+override onArticleReaderPrimaryButtonClicked(article: IArticle) {
 }
 ```
 

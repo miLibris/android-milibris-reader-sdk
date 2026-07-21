@@ -1,5 +1,10 @@
 # MiLibrisReaderSDK Android changelog
 
+# 1.21.0
+
+## Features
+- Add a primary floating button in article reader
+
 # 1.20.2
 
 ## Improvements
